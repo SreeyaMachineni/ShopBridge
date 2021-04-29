@@ -1,0 +1,32 @@
+<div class="inv-form">
+    <div>
+        <span class="heading">Inventory List</span>
+        <span class="action">
+            - {{action}}
+        </span>
+    </div>
+    <form [formGroup]="invItemForm" (ngSubmit)="submitItem()">
+        <label>Product Name</label>
+        <input type="text" class="input-ctrl" formControlName="name" autofocus/>
+        <div *ngIf="invItemForm.controls['name'].invalid && (invItemForm.controls['name'].dirty || invItemForm.controls['name'].touched)" class="text-danger">Invalid Name</div>
+        <label>Stock</label>
+        <input type="text" class="input-ctrl" formControlName="stock"/>
+        <div *ngIf="invItemForm.controls['stock'].invalid && (invItemForm.controls['stock'].dirty || invItemForm.controls['stock'].touched)" class="text-danger">Invalid Stock</div>
+
+        <label>Price</label>
+        <input type="text" class="input-ctrl" formControlName="price"/>
+        <div *ngIf="invItemForm.controls['price'].invalid && (invItemForm.controls['price'].dirty || invItemForm.controls['price'].touched)" class="text-danger">Invalid Price</div>
+
+        <label>Category</label>
+        <input type="text" class="input-ctrl" formControlName="category"/>
+        <div *ngIf="invItemForm.controls['category'].invalid && (invItemForm.controls['category'].dirty || invItemForm.controls['category'].touched)" class="text-danger">Invalid Category</div>
+
+        
+        <span><button type="submit" class="btn clear" (click)="goback()">Back</button></span>
+        <span class="actBtns">
+            <button type="submit" class="btn clear" (click)="clear()">Clear</button>
+            <button type="submit" class="btn sbt" [disabled]="!invItemForm.valid">Submit</button>
+        </span>
+        
+    </form>
+</div>

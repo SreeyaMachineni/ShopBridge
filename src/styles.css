@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin:0;
+    box-sizing: border-box
+}
+
+:root{
+    --primaryColor:#ff471a;
+    --secondaryColor:darkblue;
+    --tertiaryColor:#5cd6d6;
+}
+.vertical-center{
+    height: 100vh;
+    position: relative
+}
+.heading{
+    font-family: Fantasy;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primaryColor)
+}
+.float-right{
+    float: right;
+}
+.input-ctrl{
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.4rem
+}
+.sbt{
+    background: var(--tertiaryColor)
+}
+.p-1{
+    padding: 0.5rem
+}
+.text-danger{
+    color:red;
+    padding-bottom: 0.5rem
+}

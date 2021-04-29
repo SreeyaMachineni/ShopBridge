@@ -1,0 +1,14 @@
+<div class="vertical-center">
+    <div class="intro-login">
+        <div class="heading">Inventory List</div>
+        <div class="underline"></div>
+        <div class="sub-heading">Login</div>
+        <form [formGroup]="authForm" (ngSubmit)="login()">
+            <input type="text" class="input-ctrl" formControlName="username" placeholder="User Name"/>
+            <div *ngIf="authForm.controls['username'].invalid && (authForm.controls['username'].dirty || authForm.controls['username'].touched)" class="text-danger">Name is Mandatory</div>
+            <input type="password" class="input-ctrl" formControlName="password" placeholder="Password"/>
+            <div *ngIf="authForm.controls['password'].invalid && (authForm.controls['password'].dirty || authForm.controls['password'].touched)" class="text-danger">Password is Mandatory</div>
+            <button type="submit" class="btn sbt" [disabled]="!authForm.valid">Submit</button>
+        </form>
+    </div>
+</div>
